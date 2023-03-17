@@ -1,12 +1,8 @@
 module.exports = {
   root: true,
   extends: ['@react-native-community'],
-  plugins: [
-    'import',
-    'detox',
-    
-  ],
-  
+  plugins: ['import', 'detox'],
+
   rules: {
     'import/order': ['warn', {alphabetize: {order: 'asc'}}], // group and then alphabetize lines - https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/order.md
     'no-duplicate-imports': 'error',
@@ -20,7 +16,7 @@ module.exports = {
     ], // alphabetize named imports - https://eslint.org/docs/rules/sort-imports
   },
   overrides: [
-  {
+    {
       files: ['e2e/**/*.e2e.js'],
       env: {
         'detox/detox': true,
@@ -28,7 +24,7 @@ module.exports = {
         'jest/globals': true,
       },
     },
-  {
+    {
       files: ['src/**/*.spec.js'],
       extends: ['plugin:testing-library/react'],
     },
