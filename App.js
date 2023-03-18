@@ -4,6 +4,7 @@ import Lecture2 from './lecture2';
 import Lecture3 from './lecture3';
 import Lecture4 from './lecture4';
 import Lecture5 from './lecture5';
+import Lecture6 from './lecture6';
 
 export default function App() {
   return (
@@ -48,6 +49,13 @@ function Exercise() {
           <Lecture5 />
         </>
       );
+    case 6:
+      return (
+        <>
+          <BackButton setLectureShown={setLectureShown} />
+          <Lecture6 />
+        </>
+      );
     default:
       return (
         <>
@@ -55,6 +63,7 @@ function Exercise() {
           <Button title="Lecture 3" onPress={() => setLectureShown(3)} />
           <Button title="Lecture 4" onPress={() => setLectureShown(4)} />
           <Button title="Lecture 5" onPress={() => setLectureShown(5)} />
+          <Button title="Lecture 6" onPress={() => setLectureShown(6)} />
         </>
       );
   }
