@@ -11,6 +11,7 @@ module.exports = (async () => {
   const {
     resolver: {sourceExts, assetExts},
   } = await getDefaultConfig();
+  const defaultSourceExts = [...sourceExts, 'svg'];
   return {
     transformer: {
       babelTransformerPath: require.resolve('react-native-svg-transformer'),
@@ -23,7 +24,10 @@ module.exports = (async () => {
     },
     resolver: {
       assetExts: assetExts.filter(ext => ext !== 'svg'),
-      sourceExts: [...sourceExts, 'svg'],
+      sourceExts:
+        process.env.MOCK_API === 'true'
+          ? ['mock.js', ...defaultSourceExts]
+          : defaultSourceExts,
     },
   };
 })();

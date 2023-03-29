@@ -1,1 +1,1 @@
-export {default} from './WidgetContainer';
+export {default} from './RestaurantContainer';
