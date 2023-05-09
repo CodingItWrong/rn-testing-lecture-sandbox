@@ -9,7 +9,7 @@ describe('Lecture 6', () => {
   });
 
   it('displays widgets from the server', async () => {
-    await expect(element(by.text('Restaurant 1'))).toBeVisible();
-    await expect(element(by.text('Restaurant 2'))).toBeVisible();
+    await expect(element(by.text('Pasta Place'))).toBeVisible();
+    await expect(element(by.text('Salad Place'))).toBeVisible();
   });
 });
